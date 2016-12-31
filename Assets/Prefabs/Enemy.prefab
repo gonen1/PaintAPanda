@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212439308151348666}
   - component: {fileID: 114011644745559074}
   - component: {fileID: 61758461426672910}
+  - component: {fileID: 95485458207549244}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -56,6 +57,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 2.1499999, y: 2.34}
+--- !u!95 &95485458207549244
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1921298413885090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed0533b39fc15af4088741b208d7f6fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114011644745559074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7408932a8e445f4a9a6ad1db8ef767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 1921298413885090}
+  sprite: {fileID: 1165423557939942, guid: cd30550881ff6324cabdb904170c23dd, type: 2}
   enemyStats:
     lane: 0
     maxSpeed: 0
