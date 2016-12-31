@@ -9,8 +9,9 @@ public class ShootingBehavior : MonoBehaviour {
 	public float damage = 10;
 	public LayerMask whatToHit;
 	public Transform firePoint;
-	public Transform BulletTrailPrefab;
+	public GameObject BulletTrailPrefab;
 	public float effectSpawnRate = 10;
+	public Animator animator;
 	public KeyCode fireKey = KeyCode.Space;
 	/*public GameObject bullet;
 	public GameObject shooter;
@@ -29,7 +30,7 @@ public class ShootingBehavior : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-	
+		animator = this.GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -39,6 +40,7 @@ public class ShootingBehavior : MonoBehaviour {
 	void FixedUpdate () {
 		if (fireRate == 0) {//single shot
 			if (Input.GetKeyDown (fireKey)) {
+				animator.SetTrigger ("PlayerShootTrigger");
 				Shoot ();
 			}
 		} else {
@@ -69,6 +71,7 @@ public class ShootingBehavior : MonoBehaviour {
 	}
 
 	void Effect (){
-		Instantiate (BulletTrailPrefab, firePoint.position, firePoint.rotation);
+		GameObject bullet = Instantiate (BulletTrailPrefab, (firePoint.position + (firePoint.forward * 2)), firePoint.rotation) as GameObject;
+		bullet.layer = LayerMask.NameToLayer ("Characters");
 	}
 }

@@ -29,6 +29,7 @@ public class PandaScript : MonoBehaviour {
 			moving = true;
 			lane -= 1;
 			animator.SetTrigger ("PlayerJumpTrigger");
+			DOTween.To (() => transform.position, (y) => transform.position = y, new Vector3 (transform.position.x, transform.position.y-0.1f, 0), 1f);
 			DOTween.To (() => transform.position, (y) => transform.position = y, new Vector3 (transform.position.x, transform.position.y + 2, 0), 1f)
 				.OnComplete(() => 
 					{
