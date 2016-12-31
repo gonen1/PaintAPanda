@@ -7,14 +7,13 @@ public class PandaScript : MonoBehaviour {
 
 	public int lane = 2;
 	public bool moving = false;
-
+	public Animator animator;
 	// Use this for initialization
-	void Start () {
-		
-	}
 
 	public float speed = 3.5f;
-	
+	void Start(){
+		animator = this.GetComponent<Animator>();
+	}
 	// Update is called once per frame
 	void Update () {
 //		if (Input.GetKey(KeyCode.LeftArrow))
@@ -29,6 +28,7 @@ public class PandaScript : MonoBehaviour {
 		{
 			moving = true;
 			lane -= 1;
+			animator.SetTrigger ("PlayerJumpTrigger");
 			DOTween.To (() => transform.position, (y) => transform.position = y, new Vector3 (transform.position.x, transform.position.y + 2, 0), 1f)
 				.OnComplete(() => 
 					{
@@ -39,6 +39,7 @@ public class PandaScript : MonoBehaviour {
 		{
 			moving = true;
 			lane += 1;
+			animator.SetTrigger ("PlayerJumpTrigger");
 			DOTween.To (() => transform.position, (y) => transform.position = y, new Vector3 (transform.position.x, transform.position.y - 2, 0), 1f)
 				.OnComplete(() => 
 				{
