@@ -7,7 +7,7 @@ public class MoveBulletTrail : MonoBehaviour {
 	void Start () {
 	
 	}
-	public int bulletSpeed=200;
+	public int bulletSpeed=20;
 	// Update is called once per frame
 	void Update () {
 		transform.Translate (Vector3.right * Time.deltaTime * bulletSpeed);

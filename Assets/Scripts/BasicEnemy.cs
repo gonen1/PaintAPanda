@@ -35,7 +35,7 @@ public class BasicEnemy : MonoBehaviour {
 	void Update () {
 		transform.position += Vector3.left * enemyStats.speed * Time.deltaTime;
 		if (transform.position.x <= -15) {
-			DestroyObject (sprite);
+			Destroy (this.gameObject, 1);
 		}
 	}
 
